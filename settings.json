@@ -1,0 +1,14 @@
+//required when setting up NodeJS process.envi
+//Do not store locally for security reason
+
+//Use this to start meteor if used in development :: meteor --settings /settings.json
+
+//else use the below cmds in terminal once you purchased a number from Twilio and found your Account_SID and TWILIO_AUTH_TOKEN 
+
+export TWILIO_ACCOUNT_SID='your Account SID'
+
+
+export TWILIO_AUTH_TOKEN='your Twilio Auth-token'
+
+
+export TWILIO_NUMBER='your twillio number'

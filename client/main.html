@@ -1,0 +1,94 @@
+<head>
+  <title>GroupTextMeteor</title>
+</head>
+
+<body>
+ 
+ 
+ 
+<div class="container">
+   <div style=" text-align: center;">
+   <h2 style="padding:20px;color:#596595;">Sample Group Text <i class="fa fa-mobile" aria-hidden="true"></i> 
+ Dock 
+</h2>
+    </div>
+   
+    <header>
+     <div style=" text-align: center;">
+      {{> loginButtons}}
+     </div>
+       <br>
+        
+      
+    </header>
+    
+    <hr>
+    <div >
+    {{#if currentUser}}
+        
+         <label style="padding:20px;color:#596595;"><i class="fa fa-users" aria-hidden="true"></i> Create a Message Group</label>
+        <br>
+       
+        
+         <form class="new-group">
+          <input type="text" name="group" placeholder="Enter a title or subject group to appear below ..." style="padding:20px;color:#596595;" />
+        </form>
+        
+       <br>
+       <hr>
+       <br>
+        
+        <label style="padding:20px;color:#596595;"><i class="fa fa-comments" aria-hidden="true"></i> Compose Your Message</label>
+        <br>
+      
+        
+        <form class="new-text">
+          <input type="text" name="message" placeholder="Your message to the checked group/numbers go here ..." style="padding:20px;color:#596595;" />
+        </form>
+ 
+       
+      {{/if}}
+    
+    
+    <hr>
+    
+    <ul>
+     
+     <h4 style="padding:20px;color:#596595;background:#D1E751;">Your Message Groups <i class="fa fa-users" aria-hidden="true"></i>
+        </h4>
+     
+      {{#each groups}}
+        {{> group}}
+      {{/each}}
+      
+    </ul>
+    
+    </div>
+  </div>
+ 
+</body>
+
+
+
+<template name="group">
+  <li>
+    <button class="delete-group">&times;</button>
+    <input type="checkbox" checked="{{checked}}" class="toggle-group" />
+    <span class="text bold">{{name}}</span>
+    <ul>
+      {{#each this.numbers}}
+        <li>
+          <button class="delete-number">&times;</button>
+          <input type="checkbox" checked="{{checked}}" class="toggle-number" />
+          <span class="text">{{number}}</span>
+        </li>
+      {{/each}}
+    </ul>
+ 
+    <form class="new-number">
+      <input type="text" name="number" placeholder="Enter a new number to add to this group..." />
+    </form>
+  </li>
+  
+</template>
+
